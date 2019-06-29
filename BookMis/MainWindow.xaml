@@ -1,0 +1,94 @@
+﻿<Window x:Class="BookMis.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BookMis"
+        mc:Ignorable="d"
+        Title="欢迎使用图书管理系统" Height="350" Width="525" Loaded="Window_Loaded"  ResizeMode="CanResizeWithGrip">
+    <Grid x:Name="myGrid">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="55"/>
+            <RowDefinition Height="192*"/>
+            <RowDefinition Height="25"/>
+        </Grid.RowDefinitions>
+        <Menu Height="25" VerticalAlignment="Top" HorizontalAlignment="Stretch" Grid.Row="0">
+            <MenuItem Header="用户管理(_U)">
+                <MenuItem Header="注销"/>
+                <MenuItem Header="退出"/>
+                <Separator/>
+                <MenuItem Header="用户管理" x:Name="menuUser">
+                    <MenuItem.Icon>
+                        <Image Source="Image/background02.jpg"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+            </MenuItem>
+            <MenuItem Header="图书管理(_B)">
+                <MenuItem Header="图书入库" InputGestureText="Ctrl+I"/>
+                <Separator/>
+                <MenuItem Header="图书借阅" InputGestureText="Ctrl+B"/>
+                <MenuItem Header="图书归还" InputGestureText="Ctrl+R"/>
+                <Separator/>
+                <MenuItem Header="图书查询" InputGestureText="Ctrl+S"/>
+            </MenuItem>
+            <MenuItem Header="读者管理(_R)">
+                <MenuItem Header="新增读者"/>
+                <MenuItem Header="读者管理"/>
+                <Separator/>
+                <MenuItem Header="读者查询"/>
+            </MenuItem>
+            <MenuItem Header="界面管理(_I)">
+                <MenuItem Header="主题定制"/>
+                <MenuItem Header="个性化设定"/>
+            </MenuItem>
+            <MenuItem Header="帮助(_H)">
+                <MenuItem Header="系统手册"/>
+                <MenuItem Header="版本"/>
+            </MenuItem>
+        </Menu>
+        <WrapPanel Grid.Row="1">
+            <ToolBarTray DockPanel.Dock="Top" Orientation="Horizontal">
+                <ToolBar Band="0" BandIndex="1" Margin="2">
+                    <Button ToolTip="增加图书">
+                        <Image Source="Image/book01.jpg" Width="40" Height="40"/>
+                    </Button>
+                    <Separator/>
+                    <Button ToolTip="图书借出">
+                        <Image Source="Image/book02.jpg" Width="40" Height="40"/>
+                    </Button>
+                    <Separator/>
+                    <Button ToolTip="图书归还">
+                        <Image Source="Image/book03.jpg" Width="40" Height="40"/>
+                    </Button>
+                    <Button ToolTip="图书查询">
+                        <Image Source="Image/book04.jpg" Width="40" Height="40"/>
+                    </Button>
+                </ToolBar>
+                <ToolBar Band="0" BandIndex="2" Margin="2">
+                    <Button ToolTip="新增读者">
+                        <Image Source="Image/person01.jpg" Width="40" Height="40"/>
+                    </Button>
+                    <Button ToolTip="读者管理">
+                        <Image Source="Image/person02.jpg" Width="40" Height="40"/>
+                    </Button>
+                    <Separator/>
+                    <Button ToolTip="读者查询">
+                        <Image Source="Image/person03.jpg" Width="40" Height="40"/>
+                    </Button>
+                </ToolBar>
+            </ToolBarTray>
+        </WrapPanel>
+        <DockPanel Grid.Row="2">
+            <Image Source="Image\background03.jpg" HorizontalAlignment="Left" Stretch="Fill" Margin="2"/>
+        </DockPanel>
+        <DockPanel Grid.Row="3">
+            <StatusBar>
+                <TextBlock Text="状态：" Margin="0,0,12,0"/>
+                <Separator/>
+                <TextBlock x:Name="statusInfo" Text="欢迎登录图书管理系统" HorizontalAlignment="Left" Margin="2"/>
+            </StatusBar>
+        </DockPanel>
+    </Grid>
+</Window>
+    
